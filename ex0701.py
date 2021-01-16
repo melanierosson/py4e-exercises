@@ -7,7 +7,7 @@
 # 	ly= lx.rstrip()
 # 	print(ly.upper())
 
-# my customizations
+# my customizations 👇
 file = open('mbox-short.txt')
 
 for line_each in file:
