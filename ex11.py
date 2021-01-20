@@ -14,7 +14,7 @@ class bcolors:
 import re
 
 # opening file
-filename = 'regex_sum_42.txt'
+filename = 'regex_sum_1136998.txt'
 filetxt = open(filename)
 
 # creates dictionary out of file contents (unsorted)
