@@ -1,14 +1,4 @@
-# taste the rainbow
-class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
+# This version is stripped of colors, emojis, and any extra stuff that makes the code more challenging to grade for instructors
 
 # importing re
 import re
@@ -17,20 +7,21 @@ import re
 filename = 'regex_sum_1136998.txt'
 filetxt = open(filename)
 
+# declarations
 regex = '[0-9]+'
 sumInts = 0  
 countInts = 0
 integers = []
+newIntList = []
+newIntItemStr = ''
 
+# stripping whitespace and finding integers in each line of the file
 for line in filetxt : 
 	line = line.rstrip()
 	integers.append(re.findall(regex, line))
     
 # removing empty list items in the file line lists (lines that had no integers)
 onlyInts = [listItems for listItems in integers if listItems]
-
-newIntList = []
-newIntItemStr = ''
 
 # stringifying everything (there are currently list items within the larger list)
 for eachItem in onlyInts :
@@ -47,5 +38,6 @@ for numItems in numList :
     # list items sum
     sumInts += int(numItems)
 
-print(bcolors.WARNING + '\n💣  The ' + bcolors.HEADER + 'total number' + bcolors.WARNING + ' of integers in ' + bcolors.OKCYAN + filename + bcolors.WARNING + ' is ' + bcolors.OKGREEN + str(countInts) + bcolors.WARNING)
-print('💥  The ' + bcolors.HEADER + 'sum '  + bcolors.WARNING + 'of all the integers in ' + bcolors.OKCYAN + filename + bcolors.WARNING + ' is ' + bcolors.OKGREEN + str(sumInts) + bcolors.ENDC + '\n')
+# final print outputs
+print('The total integer count is ' +  str(countInts))
+print('The sum of all integers is ' + str(sumInts))
